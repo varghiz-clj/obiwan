@@ -254,6 +254,13 @@
 (defn get [^UnifiedJedis redis k]
   (.get redis k))
 
+(defn setget
+  ([^UnifiedJedis redis k v]
+   (.setGet redis k v))
+  ([^UnifiedJedis redis k v params]
+   (let [ps (c/->set-params params)]
+     (.setGet redis k v ps))))
+
 (defn mset [^UnifiedJedis redis m]
   (.mset redis (t/m->array m)))
 

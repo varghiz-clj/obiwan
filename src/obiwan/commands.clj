@@ -17,8 +17,7 @@
     ex (.ex ex)
     exat (.exAt exat)
     pxat (.pxAt pxat)
-    keepttl (.keepttl)
-    get (.get)))
+    keepttl (.keepttl)))
 
 (defn <-tuple
   "this fn transforms the data from redis tuple to clojure map"
