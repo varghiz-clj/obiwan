@@ -19,8 +19,8 @@
                           :as opts}]
   (println "making redis server" opts)
   (let [provider (doto (RedisExecProvider/defaultProvider)
-                   (.override (OS/MAC_OS_X/valueOf os)
-                              path))
+                       (.override (OS/valueOf os)
+                                  path))
         rdbfile (str dir "/dump.rdb")]
     (io/delete-file rdbfile true)
     (-> (RedisServerBuilder.)
