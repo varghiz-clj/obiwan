@@ -254,7 +254,7 @@
 (defn get [^UnifiedJedis redis k]
   (.get redis k))
 
-(defn setget
+(defn set-get
   ([^UnifiedJedis redis k v]
    (.setGet redis k v))
   ([^UnifiedJedis redis k v params]
